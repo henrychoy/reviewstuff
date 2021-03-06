@@ -1,0 +1,53 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="/stylesheets/table.css">
+
+<a href="/reviews">Go back to Reviews page</a>
+
+    <!-- This table displays the calculated values -->
+    <table>
+        <tr>
+            <th>Category</th>
+            <th>Reviews</th>
+            <th>Unique Reviewers</th>
+        </tr>
+        <tr>
+            <td>Movie</td>
+            <td>{{{countMovie}}}</td>
+            <td>{{{movieReviewers}}}</td>
+        </tr>
+        <tr>
+            <td>TV Show</td>
+            <td>{{{countTV}}}</td>
+            <td>{{{tvReviewers}}}</td>
+        </tr>
+        <tr>
+            <td>Book</td>
+            <td>{{{countBook}}}</td>
+            <td>{{{bookReviewers}}}</td>
+        </tr>
+        <tr>
+            <td>Video Game</td>
+            <td>{{{countGame}}}</td>
+            <td>{{{gameReviewers}}}</td>
+        </tr>
+        <tr>
+            <td><b>Grand Total</b></td>
+            <td>{{{countAll}}}</td>
+            <td>{{{allReviewers}}}</td>
+        </tr>
+        
+    </table>
+
+    <br>
+
+    <h3>Reviewer Names</h3>
+{{#if arrayAll}}
+    {{#each arrayAll}}
+      <a href="/reviews/reviewer/{{this}}">{{this}}</a> <br>
+    {{/each}}
+{{else}}
+<p>No reviews found!</p>
+{{/if}}
+
+<br>
+

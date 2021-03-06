@@ -1,0 +1,66 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<div class="table-responsive">
+  <form method="post" action="/reviews/add">
+    <table class="table table-condensed">
+      <tbody>
+       
+       <tr>
+         <th>Reviewer: </th>
+         <td><input type="text" name="reviewer" required
+              placeholder="Enter your name"></td>
+       </tr>
+       <tr>
+         <th>Category: </th>
+         <td>
+             <select name="category">
+                 <option value="Movie">Movie</option>
+                 <option value="TV_Show">TV Show</option>
+                 <option value="Book">Book</option>
+                 <option value="Video_Game">Video Game</option>
+             </select>
+         </td>
+       </tr>
+       <tr>
+           <th>Subject: </th>
+           <td><input type="text" name="subject" required
+                      placeholder="What are you reviewing?"></td>
+       </tr>
+       <tr>
+           <th>Body: </th>
+           <td><input type="text" name="body" required
+                      placeholder="Write review here"></td>
+       </tr>
+       <tr>
+           <th>Rating: </th>
+           <td>
+               <div class="rate">
+                   <input type="radio" id="star5" name="rating" value="5" />
+                   <label for="star5" title="text">5 stars</label>
+                   <input type="radio" id="star4" name="rating" value="4" />
+                   <label for="star4" title="text">4 stars</label>
+                   <input type="radio" id="star3" name="rating" value="3" />
+                   <label for="star3" title="text">3 stars</label>
+                   <input type="radio" id="star2" name="rating" value="2" />
+                   <label for="star2" title="text">2 stars</label>
+                   <input type="radio" id="star1" name="rating" value="1" />
+                   <label for="star1" title="text">1 star</label>
+               </div>
+           </td>
+       </tr>
+       
+       </tbody>
+      <tfooter>
+        <tr>
+          <td></td>
+          <td>
+           <input type="submit" value="Save" 
+              class="btn btn-success">
+           <input type="button" value="Cancel" 
+              class="btn btn-danger" onclick="cancelAdd()">
+          </td>
+        </tr>
+      </tfooter>
+    </table>
+  </form>
+</div>

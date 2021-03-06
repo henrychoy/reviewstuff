@@ -1,0 +1,37 @@
+table{
+    margin-top: 1em;
+    grid-row: 3;
+    -ms-grid-row: 3;
+
+}
+
+
+th, td{
+    padding: 5px 10px;
+}
+
+th{
+    text-transform: uppercase;
+    border-bottom: 2px solid #111111;
+    border-top: 1px solid #999;
+    text-align: left;
+}
+
+.sticky-header th{
+    position: sticky;
+    top: 0;
+    background-color: #3e4d5e;
+    color: white;
+}
+
+tr{
+    text-align: right;
+}
+
+td.row-name{
+    text-align: left;
+}
+
+table tbody tr:nth-child(even) td {
+    background-color: lightgray;
+}

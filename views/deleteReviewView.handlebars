@@ -1,0 +1,21 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<div class="table-responsive">
+  <form method="post" action='/reviews/delete'>
+
+      <hr>
+      Reviewer: {{reviewer}}<br>
+      Category: {{category}}<br>
+      Subject: {{subject}}<br>
+      Review: {{body}}<br>
+      Rating: {{{stars rating}}}
+      <hr>
+
+      <input type="hidden" name="id" value="{{id}}">
+      <input type="submit" value="Delete" class="btn btn-success">
+      <input type="button" value="Cancel" class="btn btn-danger"
+             class="cancel" onclick="cancelDelete()">
+
+
+  </form>
+</div>

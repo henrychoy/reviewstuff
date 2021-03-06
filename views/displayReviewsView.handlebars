@@ -1,0 +1,56 @@
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+<button onClick="addReview();">Add a Review!</button>
+
+<form method="post" action="/reviews" onchange="this.submit()">
+
+    <label for="filter">Filter by Category:</label>
+    <select name="filter" id="filter">
+        <option {{{filterAll}}} value="All">All</option>
+        <option {{{filterMovie}}} value="Movie">Movie</option>
+        <option {{{filterTV}}} value="TV_Show">TV Show</option>
+        <option {{{filterBook}}} value="Book">Book</option>
+        <option {{{filterGame}}} value="Video_Game">Video Game</option>
+    </select>
+
+    &nbsp
+
+    <label for="subject">Subject Search:</label>
+    <input type="text" id="subject" name="findSubject" placeholder="Search specific thing..." value="{{{findSubject}}}">
+
+    <br>
+    
+    <label for="sort">Sort by Rating:</label>
+    <select name="sort" id="sort">
+        <option value="---">---</option>
+        <option {{{highest}}} value="Highest First">Highest First</option>
+        <option {{{lowest}}} value="Lowest First">Lowest First</option>
+    </select>
+    
+    &nbsp &nbsp &nbsp
+
+    <label for="reviewer">Reviewer Search:</label>
+    <input type="text" id="reviewer" name="findReviewer" placeholder="Search reviewer name..." value="{{{findReviewer}}}">
+    <input type="submit">
+
+
+</form>
+
+<p>
+    Displaying {{{numberCategory}}} <b>{{displayCategory filterCategory}}</b> {{numberAll}} reviews.  <a href="/reviews/metrics">Click Here to view Metrics</a>
+</p>
+
+{{#if data}}
+    {{#each data}}
+        <hr>
+        Reviewer: <a href="/reviews/reviewer/{{reviewer}}" style="text-decoration: none">{{reviewer}}</a><br>
+        Category: <a href="/reviews?category={{category}}" style="text-decoration: none">{{displayCategory category}}</a><br>
+        Subject: {{subject}}<br>
+        Review: {{body}}<br>
+        Rating: {{{stars rating}}} &nbsp
+        <a href="/reviews/edit/{{this.id}}">Edit</a> |
+        <a href="/reviews/delete/{{this.id}}">Delete</a>
+    {{/each}}
+{{else}}
+<p>No reviews found!</p>
+{{/if}}

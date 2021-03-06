@@ -1,0 +1,60 @@
+<div class="table-responsive">
+  <form method="post" action='/reviews/edit'>
+    <table class="table table-condensed">
+      <tbody>
+        <tr>
+          <th>Reviewer: </td>
+          <td><input type="text" name="reviewer"
+                  value="{{reviewer}}"></td>
+        </tr>
+        <tr>
+          <th>Category: </td>
+          <td>
+              <select name="category" id="filter">
+                  <option {{{movie}}} value="Movie">Movie</option>
+                  <option {{{tv}}} value="TV_Show">TV Show</option>
+                  <option {{{book}}} value="Book">Book</option>
+                  <option {{{game}}} value="Video_Game">Video Game</option>
+              </select>
+          </td>
+        </tr>
+        <tr>
+            <th>Subject: </th>
+            <td><input type="text" name="subject" value="{{{subject}}}" required></td>
+        </tr>
+        <tr>
+            <th>Body: </th>
+            <td><input type="text" name="body" value="{{{body}}}" required></td>
+        </tr>
+        <tr>
+            <th>Rating: </th>
+            <td>
+                <div class="rate">
+                    <input type="radio" id="star5" name="rating" value="5" {{{star5}}}/>
+                    <label for="star5" title="text">5 stars</label>
+                    <input type="radio" id="star4" name="rating" value="4" {{{star4}}}/>
+                    <label for="star4" title="text">4 stars</label>
+                    <input type="radio" id="star3" name="rating" value="3" {{{star3}}}/>
+                    <label for="star3" title="text">3 stars</label>
+                    <input type="radio" id="star2" name="rating" value="2" {{{star2}}}/>
+                    <label for="star2" title="text">2 stars</label>
+                    <input type="radio" id="star1" name="rating" value="1" {{{star1}}}/>
+                    <label for="star1" title="text">1 star</label>
+                </div>
+            </td>
+        </tr>
+        <input type="hidden" name="id" value="{{id}}">
+      </tbody>
+      <tfooter>
+        <tr>
+          <td></td>
+          <td>
+              <input type="submit" value="Save" class="btn btn-success">
+              <input type="button" value="Cancel" class="btn btn-danger"
+                  class="cancel" onclick="cancelAdd()">
+          </td>
+        </tr>
+      </tfooter>
+    </table>
+  </form>
+</div>
