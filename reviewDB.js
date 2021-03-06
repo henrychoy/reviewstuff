@@ -3,7 +3,8 @@ const mongoose = require('mongoose');
 const credentials = require("./credentials.js");
 
 const dbUrl = 'mongodb+srv://' + credentials.username +
-	':' + credentials.password + '@' + credentials.host + '/' + credentials.database;
+	':' + credentials.password + '@' + credentials.host + '/' + credentials.database +
+	'?retryWrites=true&w=majority';
 
 let connection = null;
 let model = null;
